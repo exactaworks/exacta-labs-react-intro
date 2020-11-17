@@ -68,7 +68,7 @@ console.log(counterState[0]); // 10
 console.log(counterState[1]); // function dispatchAction()
 
 // 2 - APLICANDO DESESTRUTURAÇÃO (IMPLEMENTAÇÃO IDEAL)
-const [counter, setCounter] = useState(10); valor inicial = 10
+const [counter, setCounter] = useState(10); // valor inicial = 10
 console.log(counter); // 10
 console.log(setCounter); // function dispatchAction()
 ```
