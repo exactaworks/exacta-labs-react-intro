@@ -4,7 +4,8 @@ Esse projeto tem como objetivo introduzir conceitos e práticas da biblioteca Re
 
 ## Executando o projeto
 
-- Execute o comando `yarn start`.
+- Execute o comando `yarn` para instalar as dependências do projeto (ou `npm install`)
+- Execute o comando `yarn start` (ou `npm start`).
 - Abra [http://localhost:3000](http://localhost:3000) para ver o projeto executando.
 
 ## Conteúdo
@@ -43,3 +44,12 @@ Para entender melhor como funciona, precisamos entender o Virtual DOM utilizado 
 
 **Commits:**
 - [Criando estrutura inicial da To Do List](https://github.com/exactaworks/exacta-labs-react-intro/commit/2f94f792d3e951ea9134051b0d4968d0f63080a8)
+
+### 3 - Componentização
+
+Os componentes basicamente são pequenos pedaços da interface. A ideia é separarmos a interface em partes independentes, reutilizáveis e isoladas, onde cada parte tenha de forma abstraída do resto do projeto sua estrutura, lógica e estilização.
+
+Em questão de código, os componentes são basicamente funções javascript que aceitam parâmetros e retornam elementos React.
+
+**Commits:**
+- [Componentizando To Do List atual](https://github.com/exactaworks/exacta-labs-react-intro/commit/bca01924782c9f594b7c112f5bc391303b52e54a?branch=bca01924782c9f594b7c112f5bc391303b52e54a&diff=unified)
