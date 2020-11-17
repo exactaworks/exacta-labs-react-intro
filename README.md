@@ -53,3 +53,29 @@ Em questão de código, os componentes são basicamente funções javascript que
 
 **Commits:**
 - [Componentizando To Do List atual](https://github.com/exactaworks/exacta-labs-react-intro/commit/bca01924782c9f594b7c112f5bc391303b52e54a?branch=bca01924782c9f594b7c112f5bc391303b52e54a&diff=unified)
+
+### 4 - Criando um estado (state) com useState
+
+A função `useState` recebe o valor inicial do estado como parâmetro e retorna um `array` contendo 2 posições:
+- 0 -> Variável que representa o valor do estado atual.
+- 1 -> Função que é utilizada para alterar o estado atual.
+
+```javascript
+// 1 - SEM DESESTRUTURAÇÃO
+const counterState = useState(10); // valor inicial = 10
+console.log(counterState); // [10, dispatchAction()]
+console.log(counterState[0]); // 10
+console.log(counterState[1]); // function dispatchAction()
+
+// 2 - APLICANDO DESESTRUTURAÇÃO (IMPLEMENTAÇÃO IDEAL)
+const [counter, setCounter] = useState(10); valor inicial = 10
+console.log(counter); // 10
+console.log(setCounter); // function dispatchAction()
+```
+
+O `state` do componente representa o estado de determinada propriedade, possuindo um valor que pode ser alterado. É semelhante a uma variável, com a diferença de que todos os elementos relacionados ao estado reagem a suas mudanças.
+
+Criei esse (trecho de código)[https://codepen.io/guilhermekuni/pen/vYLzbQL?editors=0010] como exemplo. Observe que só é possível incrementar o valor do contador referente ao STATE COUNT. Isso acontece porque o elemento relacionado ao estado `stateCount` reage as suas mudanças, enquanto o elemento relacionado a variável `variableCount` não reage as suas mudanças (mas a variável está sim sendo incrementada).
+
+**Commits:**
+- (Adiciona state referente as tasks)[https://github.com/exactaworks/exacta-labs-react-intro/commit/ff931c943d051faa5d13ca978711ed0e1dcc2a2d]
