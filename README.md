@@ -9,7 +9,7 @@ Esse projeto tem como objetivo introduzir conceitos e práticas da biblioteca Re
 
 ## Conteúdo
 
-### 1 - Create React App (CRA)
+### 1 - Criando o projeto com Create React App (CRA)
 
 O projeto foi criado utilizando o comando [Create React App](https://github.com/facebook/create-react-app).
 
