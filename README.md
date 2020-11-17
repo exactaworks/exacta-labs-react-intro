@@ -56,7 +56,7 @@ Em questão de código, os componentes são basicamente funções javascript que
 
 ### 4 - Criando um estado (state) com useState
 
-A função `useState` recebe o valor inicial do estado como parâmetro e retorna um `array` contendo 2 posições:
+O hook `useState` é uma função que recebe o valor inicial do estado como parâmetro e retorna um `array` contendo 2 posições:
 - 0 -> Variável que representa o valor do estado atual.
 - 1 -> Função que é utilizada para alterar o estado atual.
 
@@ -77,5 +77,36 @@ O `state` do componente representa o estado de determinada propriedade, possuind
 
 Criei esse [trecho de código](https://codepen.io/guilhermekuni/pen/vYLzbQL?editors=0010) como exemplo. Observe que só é possível incrementar o valor do contador referente ao STATE COUNT. Isso acontece porque o elemento relacionado ao estado `stateCount` reage as suas mudanças, enquanto o elemento relacionado a variável `variableCount` não reage as suas mudanças (mas a variável está sim sendo incrementada).
 
+**Obs:** o `useState`, junto ao `useEffect` (assunto abordado no próximo tópico) fazem parte dos Hooks, introduzidos no React na versão [16.8](https://pt-br.reactjs.org/blog/2019/02/06/react-v16.8.0.html), que mudaram completamente a forma como implementamos os componentes no React. Antes era comum utilizarmos a sintaxe de componentes de Classe ao invés de componentes Funcionais quando precisamos controlar estado e ciclo de vida do componente. Nesse projeto **não** serão abordados componentes de classe, mas vale lembrar que apesar da sintaxe ser diferente, os conceitos são bem parecidos.
+
+**Referências:**
+- [React State Hook](https://pt-br.reactjs.org/docs/hooks-state.html)
+- [React 16.8: Hooks](https://pt-br.reactjs.org/blog/2019/02/06/react-v16.8.0.html)
+
 **Commits:**
 - [Adiciona state referente as tasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/ff931c943d051faa5d13ca978711ed0e1dcc2a2d)
+
+### 5 - Implementando ciclo de vida com useEffect
+
+O hook `useEffect` é um método utilizado para controlar o ciclo de vida do componente. Ele recebe uma função `callback` e um array de dependências. Seu funcionamento é simples: toda vez que um dos elementos informados no array de dependências for atualizado, a função `callback` é executada. Exemplo:
+
+```javascript
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log(`count foi atualizado para ${count}`); 
+  }, [count]);
+```
+
+Há casos em que precisamos executar uma função apenas no momento de renderização do componente, nesse caso, basta utilizar o `useEffect` e passar um array de dependências vazio. Exemplo:
+
+```javascript
+  useEffect(() => {
+    console.log('Essa função é executada uma vez, quando o componente é renderizado.');
+  }, []);
+```
+**Referências:**
+- [React Effect Hook](https://pt-br.reactjs.org/docs/hooks-effect.html)
+
+**Commits:**
+- [Adiciona useEffect para controle de loading e lifecycle](https://github.com/exactaworks/exacta-labs-react-intro/commit/4d8aa8ab18c267da232867d6f4e23d2c7e1c2631)
