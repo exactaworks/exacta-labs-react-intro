@@ -11,7 +11,7 @@ const TASKS_MOCK = [
 ];
 
 const Home = () => {
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -23,14 +23,30 @@ const Home = () => {
     }, 2000);
   }, []);
 
+  const handleTaskSubmit = (description) => {
+    const newTask = {
+      id: tasks.length + 1,
+      description,
+    };
+
+    const updatedTaskList = [...tasks, newTask];
+
+    setTasks(updatedTaskList);
+  }
+
+  const handleTaskRemove = (taskId) => {
+    const updatedTaskList = tasks.filter(item => item.id !== taskId);
+    setTasks(updatedTaskList);
+  };
+
   return (
     <>
       <h1>To Do List</h1>
-      <TaskForm />
+      <TaskForm onSubmit={handleTaskSubmit} />
       {
-        loading ? 
-          <p>Carregando...</p> : 
-          <TaskList tasks={tasks} />
+        loading ?
+          <p>Carregando...</p> :
+          <TaskList tasks={tasks} onRemove={handleTaskRemove} />
       }
     </>
   );

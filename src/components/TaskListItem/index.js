@@ -1,8 +1,11 @@
 import React from 'react';
 
-const TaskListItem = ({ description }) => {
+const TaskListItem = ({ id, description, onRemove }) => {
   return (
-    <li>{description}</li>
+    <li>
+      <span>{description}</span>
+      <span onClick={() => onRemove(id)}> X </span>
+    </li>
   );
 };
 

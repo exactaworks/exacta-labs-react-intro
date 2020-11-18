@@ -2,11 +2,16 @@ import React from 'react';
 
 import TaskListItem from '../TaskListItem';
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ tasks, onRemove }) => {
   return (
     <ul>
       {tasks.map(item =>
-        <TaskListItem key={item.id} description={item.description} />
+        <TaskListItem
+          key={item.id}
+          id={item.id}
+          description={item.description}
+          onRemove={onRemove}
+        />
       )}
     </ul>
   );
