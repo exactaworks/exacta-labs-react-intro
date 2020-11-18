@@ -129,3 +129,28 @@ Há casos em que precisamos executar uma função apenas no momento de renderiza
 
 **Referências:**
 - [React Effect Hook](https://pt-br.reactjs.org/docs/hooks-effect.html)
+
+### 6 - Atualizando e removendo tasks através de parâmetros
+
+Como vimos anteriormente, os componentes são basicamente funções JavaScript que podem receber parâmetros e retornam elementos React. Esses parâmetros podem ser praticamente qualquer tipo de dado, desde valores básicos como `string` e `number`, até `objects` e `arrays`. 
+
+Vimos alguns desses dados sendo passados como parâmetros anteriormente em outros commits, o que não vimos ainda foi uma `function` sendo passada como parâmetro. Isso é possível, e é muito útil quando queremos atualizar uma informação do componente `parent` através do componente `children`.
+
+**Commits:**
+- [Implementa adição e remoção de tasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/eaa8091c80553de96ffddbb36994866943343678)
+
+**Implementação:**
+A nossa página `Home.js` (que também é um componente) é responsável por controlar nosso estado `tasks`, então, foi ela que definiu os métodos `handleTaskSubmit` e `handleTaskRemove`. Para conseguirmos acionar esses métodos através dos componentes `children`, eles foram passandos como parâmetros:
+
+- Home `handleTaskSubmit` `handleTaskRemove`
+  - TaskForm onSubmit={`handleTaskSubmit`}
+  - TaskList onRemove={`handleTaskRemove`}
+    - TaskListItem onRemove={onRemove}
+
+Perceba que no caso do método `handleTaskRemove` foi necessário descer 2 camadas (Home -> TaskList -> TaskListItem). Isso porque quem vai acionar esse método vai ser o componente `TaskListItem`. Foi possível atingir esse comportamento, porém realizamos uma prática ruim e bem comum, conhecida como "Prop Drilling".
+
+Vamos resolver esse problema posteriormente, mas para entender melhor, deixei alguns links a baixo. 
+
+**Referências**
+- [StackOverflow: O que é Prop Drilling](https://pt.stackoverflow.com/questions/424755/o-que-%C3%A9-prop-drilling)
+- [KentCDodds: Prop Drilling](https://kentcdodds.com/blog/prop-drilling)
