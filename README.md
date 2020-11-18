@@ -36,14 +36,17 @@ O JSX é uma sintaxe bem semelhante ao HTML, que possibilita a utilização do J
 
 Para entender melhor como funciona, precisamos entender o Virtual DOM utilizado no React.
 
+**Commits:**
+- [Criando estrutura inicial da To Do List](https://github.com/exactaworks/exacta-labs-react-intro/commit/2f94f792d3e951ea9134051b0d4968d0f63080a8)
+
+**Implementação:**
+Apenas foi criada uma estrutura básica de um componente, contendo JavaScript (que monta o array de tasks) e a função `return` que retorna o JSX responsável por "montar" nossa tela inicial.
+
 **Referências:**
 - [Artigo: Virtual DOM](https://pt-br.reactjs.org/docs/faq-internals.html)
 - [Artigo: JSX](https://pt-br.reactjs.org/docs/introducing-jsx.html)
 - [Vídeo: Entendendo Virtual DOM](https://www.youtube.com/watch?v=Xf9BQCXHuNM)
 - [Vídeo: Entendendo JSX](https://www.youtube.com/watch?v=7MWV5vQyrUU)
-
-**Commits:**
-- [Criando estrutura inicial da To Do List](https://github.com/exactaworks/exacta-labs-react-intro/commit/2f94f792d3e951ea9134051b0d4968d0f63080a8)
 
 ### 3 - Componentização
 
@@ -53,6 +56,12 @@ Em questão de código, os componentes são basicamente funções javascript que
 
 **Commits:**
 - [Componentizando To Do List atual](https://github.com/exactaworks/exacta-labs-react-intro/commit/bca01924782c9f594b7c112f5bc391303b52e54a?branch=bca01924782c9f594b7c112f5bc391303b52e54a&diff=unified)
+
+**Implementação:**
+Antes toda nossa lógica e estrutura estava concentrada no `App.js`, agora o código foi refatorado e temos a página `Home.js`, que está componentizada, sendo formada pelos componentes:
+- TaskForm: responsável por renderizar o input e o button.
+- TaskList: responsável por renderizar a lista de tarefas, que utiliza em sua composição o próximo componente da lista.
+  - TaskListItem: responsável por renderizar cada tarefa individualmente.
 
 ### 4 - Criando um estado (state) com useState
 
@@ -79,12 +88,15 @@ Criei esse [trecho de código](https://codepen.io/guilhermekuni/pen/vYLzbQL?edit
 
 **Obs:** o `useState`, junto ao `useEffect` (assunto abordado no próximo tópico) fazem parte dos Hooks, introduzidos no React na versão [16.8](https://pt-br.reactjs.org/blog/2019/02/06/react-v16.8.0.html), que mudaram completamente a forma como implementamos os componentes no React. Antes era comum utilizarmos a sintaxe de componentes de Classe ao invés de componentes Funcionais quando precisavamos controlar estado e ciclo de vida do componente (com os Hooks, hoje já é possível ter esses controles em componentes Funcionais). Nesse projeto **não** serão abordados componentes de classe, mas vale lembrar que apesar da sintaxe ser diferente, os conceitos são bem parecidos.
 
+**Commits:**
+- [Adiciona state referente as tasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/ff931c943d051faa5d13ca978711ed0e1dcc2a2d)
+
+**Implementação:**
+As `tasks` foram alteradas para serem um **estado** e não uma **variável**.
+
 **Referências:**
 - [React State Hook](https://pt-br.reactjs.org/docs/hooks-state.html)
 - [React 16.8: Hooks](https://pt-br.reactjs.org/blog/2019/02/06/react-v16.8.0.html)
-
-**Commits:**
-- [Adiciona state referente as tasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/ff931c943d051faa5d13ca978711ed0e1dcc2a2d)
 
 ### 5 - Implementando ciclo de vida com useEffect
 
@@ -105,8 +117,15 @@ Há casos em que precisamos executar uma função apenas no momento de renderiza
     console.log('Essa função é executada uma vez, quando o componente é renderizado.');
   }, []);
 ```
-**Referências:**
-- [React Effect Hook](https://pt-br.reactjs.org/docs/hooks-effect.html)
 
 **Commits:**
 - [Adiciona useEffect para controle de loading e lifecycle](https://github.com/exactaworks/exacta-labs-react-intro/commit/4d8aa8ab18c267da232867d6f4e23d2c7e1c2631)
+
+**Implementação:**
+- Alteramos o state `tasks` para ser iniciado como um array vazio. 
+- Adicionado a const `TASKS_MOCK`, que é nosso mock que representa as tasks retornadas da API.
+- Também foi adicionado o state `loading`, que representa o carregamento das tasks.
+- Utilizamos o hook `useEffect` para iniciar o `loading` ao renderizar o componente e também preencher nossas `tasks` com o mock. 
+
+**Referências:**
+- [React Effect Hook](https://pt-br.reactjs.org/docs/hooks-effect.html)
