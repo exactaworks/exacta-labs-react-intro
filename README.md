@@ -213,7 +213,7 @@ Pronto! Com isso já é possível executar e consumir nossa API Fake, basta roda
 Até agora manipulamos nossas tasks apenas em memória, mas agora que temos nossa API Fake rodando, podemos consumir ela! Para isso, vamos utilizar a Fetch API, uma funcionalidade nativa do JavaScript para lidar com requisições HTTP utilizando promises. Vamos também aplicar a sintaxe `async/await` ao invés de utilizar o `then` para lidar com a resolução das promises.
 
 **Implementação:**
-Para lidar com as requisições HTTP utilizando o Fetch, foi criado o arquivo `services/api.js` para deixar o código mais organizado. Foram implementados os métodos `get`, `post` e `delete` e, por fim, o `fetchRequest`, que basicamente abstraí a lógica de montar a request e serve como um middleware, pois é chamado por todos os outros métodos. Posteriormente poderemos utilizá-lo também para tratar respostas de erro.
+Para lidar com as requisições HTTP utilizando o Fetch, foi criado o arquivo `services/api.js` para deixar o código mais organizado. Foram implementados os métodos `get`, `post`, `delete` e, por fim, o `fetchRequest`, que basicamente abstraí a lógica de montar a request e serve como um middleware, pois é chamado por todos os outros métodos. Posteriormente poderemos utilizá-lo também para tratar respostas de erro.
 
 **Commits:**
 - [Implementa request GET](https://github.com/exactaworks/exacta-labs-react-intro/commit/c3855ea5e5f4f3247908dc7cb1386a2ad30d63e1)
@@ -225,3 +225,5 @@ Para lidar com as requisições HTTP utilizando o Fetch, foi criado o arquivo `s
 - [BrazilJS: Fetch API e o JavaScript](https://braziljs.org/artigos/fetch-api-e-o-javascript/)
 - [How to Use Fetch with async/await](https://dmitripavlutin.com/javascript-fetch-async-await/)
 - [HTTP POST Request Examples](https://jasonwatmore.com/post/2020/02/01/react-fetch-http-post-request-examples)
+
+### 10 - Estilizando a To Do List com Styled Components
