@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { getTasks, createTask } from '../services/api';
+import { getTasks, createTask, deleteTask } from '../services/api';
 
 import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
@@ -29,8 +29,11 @@ const Home = () => {
     setTasks(updatedTaskList);
   }
 
-  const handleTaskRemove = (taskId) => {
+  const handleTaskRemove = async (taskId) => {
     const updatedTaskList = tasks.filter(item => item.id !== taskId);
+
+    await deleteTask(taskId);
+
     setTasks(updatedTaskList);
   };
 

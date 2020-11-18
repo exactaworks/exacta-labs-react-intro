@@ -10,7 +10,15 @@ export const createTask = async (task) => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(task)
-  })
+  });
+
+  return await response.json();
+};
+
+export const deleteTask = async (taskId) => {
+  const response = await fetch(`${BASE_URL}/tasks/${taskId}`, {
+    method: 'DELETE'
+  });
 
   return await response.json();
 };
