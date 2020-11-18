@@ -4,8 +4,9 @@ Esse projeto tem como objetivo introduzir conceitos e práticas da biblioteca Re
 
 ## Executando o projeto
 
-- Execute o comando `yarn` para instalar as dependências do projeto (ou `npm install`)
-- Execute o comando `yarn start` (ou `npm start`).
+- Execute o comando `yarn` (ou `npm install`) para instalar as dependências do projeto.
+- Execyte o comand `yarn json` (ou `npm run json`) para subir a API Fake.
+- Execute o comando `yarn start` (ou `npm start`) para iniciar o projeto.
 - Abra [http://localhost:3000](http://localhost:3000) para ver o projeto executando.
 
 ## Conteúdo
@@ -179,6 +180,30 @@ O componente `TaskListItem` foi excluído, e sua estrutura e lógica foram movid
 **Referências:**
 - [Redux](https://pt-br.reactjs.org/docs/context.html)
 - [Context API](https://pt-br.reactjs.org/docs/context.html)
-- [Coder: Entenda REDUX em um VÍDEO](https://www.youtube.com/watch?v=J0g1cv_03XQ)
+- [Cod3r: Entenda REDUX em um VÍDEO](https://www.youtube.com/watch?v=J0g1cv_03XQ)
 - [Rocketseat: Desvendando Redux na prática](https://www.youtube.com/watch?v=u99tNt3TZf8&t=645s)
 - [Guilherme Rodz: Como usar React Context](https://www.youtube.com/watch?v=FsCBw9X9U84)
+
+### 8 - Instalando e configurando JSON Server
+
+Até agora utilizamos dados mockados para testar nossa To Do List, e também apenas manipulamos registros em memória. Em uma aplicação real, provavelmente esses registros seriam armazenados em um banco de dados e nós conseguiríamos consultar e manipular os mesmos consumindo endpoints de uma API. Como o intuito desse projeto é apenas introduzir conceitos do React, não vamos construir uma API real, porém vamos simular uma! 
+
+Existem várias formas de simular uma API, a utilizada nesse projeto foi através da biblioteca [json-server](https://github.com/typicode/json-server). Com ela, conseguimos simular uma API e uma base de dados com apenas um arquivo json, que vamos chamar de `db.json`.
+
+Já vamos detalhar a implementação, mas antes é importante entendermos como funcionam as dependências do nosso projeto. Elas estão todas definidas no `package.json`, basicamente esse arquivo contém todas as dependências do nosso projeto. Podemos observar que temos 2 arrays de dependências: `dependencies` e `devDependencies`. Ambos os arrays contém o nome das bibliotecas que são utilizadas em nosso projeto, com a diferença de que `devDependecies` contém apenas bibliotecas utilizadas em ambiente de desenvolvimento.
+
+Já vamos entender o motivo dessa separação, mas antes é legal notar que nesses arrays estão definidos apenas os nomes das bibliotecas, isso porque as bibliotecas em si ficam dentro da pasta `node_modules`. Essa pasta **não** é versionada em nosso repositório, o que temos é apenas a referência das bibliotecas em nosso `package.json`. Isso porque o `node_modules` costuma ser uma pasta muito pesada (por conter a implementação de todas as dependências externas do nosso projeto), então para conseguirmos rodar um projeto após cloná-lo ou baixá-lo na nossa máquina rodamos o comando `yarn` (ou `npm install`), que vai instalar todas as dependências em nosso `node_modules` a partir das referências que temos em nosso `package.json`. Em nossa máquina, em ambiente de desenvolvimento vamos baixar tanto as bibliotecas definidas em `dependecies` quanto em `devDependecies`, porém em ambiente de produção as bibliotecas de desenvolvimento não serão baixadas, economizando um pouco de consumo (por isso é feita essa separação!).
+
+**Commits:**
+- [Instala e configura json-server](https://github.com/exactaworks/exacta-labs-react-intro/commit/242ee3e1d38a087f6bf7e2e9d8cdaaec3fe9f998)
+
+**Implementação:**
+Foi executado o comando `yarn add json-server -D` (poderia ser `npm install json-server -D`) para instalar a biblioteca `json-server` como dependência de desenvolvimento.
+
+Após isso, foi criado o arquivo `db.json`, que vai representar os dados da nossa base de dados, que vão ser retornados e manipulados pelo nossa API Fake.
+
+Pronto! Com isso já é possível executar e consumir nossa API Fake, basta rodar o comando `yarn json-server --watch db.json`. Porém, para facilitar, também adicionamos o script `json` que facilita essa execução, então precisamos apenas executar `yarn json`.
+
+**Referências:**
+- [JSON Server](https://github.com/typicode/json-server)
+- [Medium: Criando API REST Fake com json-server](https://medium.com/@andrewchanm/criando-uma-api-rest-fake-com-json-server-9a312127f6d6)
