@@ -42,11 +42,11 @@ O JSX é uma sintaxe bem semelhante ao HTML, que possibilita a utilização do J
 
 Para entender melhor como funciona, precisamos entender o Virtual DOM utilizado no React.
 
-**Commits:**
-- [Criando estrutura inicial da To Do List](https://github.com/exactaworks/exacta-labs-react-intro/commit/2f94f792d3e951ea9134051b0d4968d0f63080a8)
-
 **Implementação:**
 Apenas foi criada uma estrutura básica de um componente, contendo JavaScript (que monta o array de tasks) e a função `return` que retorna o JSX responsável por "montar" nossa tela inicial.
+
+**Commits:**
+- [Criando estrutura inicial da To Do List](https://github.com/exactaworks/exacta-labs-react-intro/commit/2f94f792d3e951ea9134051b0d4968d0f63080a8)
 
 **Referências:**
 - [Artigo: Virtual DOM](https://pt-br.reactjs.org/docs/faq-internals.html)
@@ -94,11 +94,11 @@ Criei esse [trecho de código](https://codepen.io/guilhermekuni/pen/vYLzbQL?edit
 
 **Obs:** o `useState`, junto ao `useEffect` (assunto abordado no próximo tópico) fazem parte dos Hooks, introduzidos no React na versão [16.8](https://pt-br.reactjs.org/blog/2019/02/06/react-v16.8.0.html), que mudaram completamente a forma como implementamos os componentes no React. Antes era comum utilizarmos a sintaxe de componentes de Classe ao invés de componentes Funcionais quando precisavamos controlar estado e ciclo de vida do componente (com os Hooks, hoje já é possível ter esses controles em componentes Funcionais). Nesse projeto **não** serão abordados componentes de classe, mas vale lembrar que apesar da sintaxe ser diferente, os conceitos são bem parecidos.
 
-**Commits:**
-- [Adiciona state referente as tasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/ff931c943d051faa5d13ca978711ed0e1dcc2a2d)
-
 **Implementação:**
 As `tasks` foram alteradas para serem um **estado** e não uma **variável**.
+
+**Commits:**
+- [Adiciona state referente as tasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/ff931c943d051faa5d13ca978711ed0e1dcc2a2d)
 
 **Referências:**
 - [React State Hook](https://pt-br.reactjs.org/docs/hooks-state.html)
@@ -124,14 +124,14 @@ Há casos em que precisamos executar uma função apenas no momento de renderiza
   }, []);
 ```
 
-**Commits:**
-- [Adiciona useEffect para controle de loading e lifecycle](https://github.com/exactaworks/exacta-labs-react-intro/commit/4d8aa8ab18c267da232867d6f4e23d2c7e1c2631)
-
 **Implementação:**
 - Alteramos o state `tasks` para ser iniciado como um array vazio. 
 - Adicionado a const `TASKS_MOCK`, que é nosso mock que representa as tasks retornadas da API.
 - Também foi adicionado o state `loading`, que representa o carregamento das tasks.
 - Utilizamos o hook `useEffect` para iniciar o `loading` ao renderizar o componente e também preencher nossas `tasks` com o mock. 
+
+**Commits:**
+- [Adiciona useEffect para controle de loading e lifecycle](https://github.com/exactaworks/exacta-labs-react-intro/commit/4d8aa8ab18c267da232867d6f4e23d2c7e1c2631)
 
 **Referências:**
 - [React Effect Hook](https://pt-br.reactjs.org/docs/hooks-effect.html)
@@ -141,9 +141,6 @@ Há casos em que precisamos executar uma função apenas no momento de renderiza
 Como vimos anteriormente, os componentes são basicamente funções JavaScript que podem receber parâmetros e retornam elementos React. Esses parâmetros podem ser praticamente qualquer tipo de dado, desde valores básicos como `string` e `number`, até `objects` e `arrays`. 
 
 Vimos alguns desses dados sendo passados como parâmetros anteriormente em outros commits, o que não vimos ainda foi uma `function` sendo passada como parâmetro. Isso é possível, e é muito útil quando queremos atualizar uma informação do componente `parent` através do componente `children`.
-
-**Commits:**
-- [Implementa adição e remoção de tasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/eaa8091c80553de96ffddbb36994866943343678)
 
 **Implementação:**
 A nossa página `Home.js` (que também é um componente) é responsável por controlar nosso estado `tasks`, então, foi ela que definiu os métodos `handleTaskSubmit` e `handleTaskRemove`. Para conseguirmos acionar esses métodos através dos componentes `children`, eles foram passandos como parâmetros:
@@ -156,6 +153,9 @@ A nossa página `Home.js` (que também é um componente) é responsável por con
 Perceba que no caso do método `handleTaskRemove` foi necessário descer 2 camadas (Home -> TaskList -> TaskListItem). Isso porque quem vai acionar esse método vai ser o componente `TaskListItem`. Foi possível atingir esse comportamento, porém realizamos uma prática ruim e bem comum, conhecida como "Prop Drilling".
 
 Vamos resolver esse problema posteriormente, mas para entender melhor, deixei alguns links a baixo. 
+
+**Commits:**
+- [Implementa adição e remoção de tasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/eaa8091c80553de96ffddbb36994866943343678)
 
 **Referências**
 - [StackOverflow: O que é Prop Drilling](https://pt.stackoverflow.com/questions/424755/o-que-%C3%A9-prop-drilling)
@@ -171,11 +171,11 @@ Vou deixar algumas referências para entendermos mais sobre o assunto, porém h�
 
 Notamos que é possível componentizar e dividir a lista de tarefas nesses dois componentes, porém não significa que essa é a melhor abordagem. Por um lado, conseguimos isolar a estrutura e estilização de ambos, porém no passo anterior notamos que esses 2 componentes são muito acoplados, ou seja, dependem um do outro para obter o funcionamento completo. Se analisarmos, provavelmente sempre usaremos os dois componentes juntos, nunca de forma separada. Por esse motivo, foi feita a implementação a seguir:
 
-**Commits:**
-- [Move tag li para TaskList e remove TaskListItem](https://github.com/exactaworks/exacta-labs-react-intro/commit/91209bf82f7bda037e0f5a6b7d836fd8bd8ce8e0)
-
 **Implementação:**
 O componente `TaskListItem` foi excluído, e sua estrutura e lógica foram movidas para o componente `TaskList`.
+
+**Commits:**
+- [Move tag li para TaskList e remove TaskListItem](https://github.com/exactaworks/exacta-labs-react-intro/commit/91209bf82f7bda037e0f5a6b7d836fd8bd8ce8e0)
 
 **Referências:**
 - [Redux](https://pt-br.reactjs.org/docs/context.html)
@@ -194,9 +194,6 @@ Já vamos detalhar a implementação, mas antes é importante entendermos como f
 
 Já vamos entender o motivo dessa separação, mas antes é legal notar que nesses arrays estão definidos apenas os nomes das bibliotecas, isso porque as bibliotecas em si ficam dentro da pasta `node_modules`. Essa pasta **não** é versionada em nosso repositório, o que temos é apenas a referência das bibliotecas em nosso `package.json`. Isso porque o `node_modules` costuma ser uma pasta muito pesada (por conter a implementação de todas as dependências externas do nosso projeto), então para conseguirmos rodar um projeto após cloná-lo ou baixá-lo na nossa máquina rodamos o comando `yarn` (ou `npm install`), que vai instalar todas as dependências em nosso `node_modules` a partir das referências que temos em nosso `package.json`. Em nossa máquina, em ambiente de desenvolvimento vamos baixar tanto as bibliotecas definidas em `dependecies` quanto em `devDependecies`, porém em ambiente de produção as bibliotecas de desenvolvimento não serão baixadas, economizando um pouco de consumo (por isso é feita essa separação!).
 
-**Commits:**
-- [Instala e configura json-server](https://github.com/exactaworks/exacta-labs-react-intro/commit/242ee3e1d38a087f6bf7e2e9d8cdaaec3fe9f998)
-
 **Implementação:**
 Foi executado o comando `yarn add json-server -D` (poderia ser `npm install json-server -D`) para instalar a biblioteca `json-server` como dependência de desenvolvimento.
 
@@ -204,6 +201,27 @@ Após isso, foi criado o arquivo `db.json`, que vai representar os dados da noss
 
 Pronto! Com isso já é possível executar e consumir nossa API Fake, basta rodar o comando `yarn json-server --watch db.json`. Porém, para facilitar, também adicionamos o script `json` que facilita essa execução, então precisamos apenas executar `yarn json`.
 
+**Commits:**
+- [Instala e configura json-server](https://github.com/exactaworks/exacta-labs-react-intro/commit/242ee3e1d38a087f6bf7e2e9d8cdaaec3fe9f998)
+
 **Referências:**
 - [JSON Server](https://github.com/typicode/json-server)
 - [Medium: Criando API REST Fake com json-server](https://medium.com/@andrewchanm/criando-uma-api-rest-fake-com-json-server-9a312127f6d6)
+
+### 9 - Consumindo API Fake com Fetch
+
+Até agora manipulamos nossas tasks apenas em memória, mas agora que temos nossa API Fake rodando, podemos consumir ela! Para isso, vamos utilizar a Fetch API, uma funcionalidade nativa do JavaScript para lidar com requisições HTTP utilizando promises. Vamos também aplicar a sintaxe `async/await` ao invés de utilizar o `then` para lidar com a resolução das promises.
+
+**Implementação:**
+Para lidar com as requisições HTTP utilizando o Fetch, foi criado o arquivo `services/api.js` para deixar o código mais organizado. Foram implementados os métodos `get`, `post` e `delete` e, por fim, o `fetchRequest`, que basicamente abstraí a lógica de montar a request e serve como um middleware, pois é chamado por todos os outros métodos. Posteriormente poderemos utilizá-lo também para tratar respostas de erro.
+
+**Commits:**
+-[Implementa request GET](https://github.com/exactaworks/exacta-labs-react-intro/commit/c3855ea5e5f4f3247908dc7cb1386a2ad30d63e1)
+-[Implementa request POST](https://github.com/exactaworks/exacta-labs-react-intro/commit/47eaf1b335e08b927a9ac465fae8b23ec4701daf)
+-[Implementa request DELETE](https://github.com/exactaworks/exacta-labs-react-intro/commit/0ea53e49942cbf53c299599fa233dad816537b11)
+-[Refatora service implementando o middleware fetchRequest](https://github.com/exactaworks/exacta-labs-react-intro/commit/0965730d601dece6728d34b4ac002b5a264ef63d)
+
+**Referências:**
+- [BrazilJS: Fetch API e o JavaScript](https://braziljs.org/artigos/fetch-api-e-o-javascript/)
+- [How to Use Fetch with async/await](https://dmitripavlutin.com/javascript-fetch-async-await/)
+- [HTTP POST Request Examples](https://jasonwatmore.com/post/2020/02/01/react-fetch-http-post-request-examples)
