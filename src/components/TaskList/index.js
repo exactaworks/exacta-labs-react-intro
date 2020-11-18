@@ -1,17 +1,13 @@
 import React from 'react';
 
-import TaskListItem from '../TaskListItem';
-
 const TaskList = ({ tasks, onRemove }) => {
   return (
     <ul>
       {tasks.map(item =>
-        <TaskListItem
-          key={item.id}
-          id={item.id}
-          description={item.description}
-          onRemove={onRemove}
-        />
+        <li key={item.id}>
+          <span>{item.description}</span>
+          <span onClick={() => onRemove(item.id)}> X </span>
+        </li>
       )}
     </ul>
   );
