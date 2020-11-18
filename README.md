@@ -16,6 +16,11 @@ O React é uma biblioteca para criação de interface e representa a camada de �
 
 **Referência:** [https://blog.rocketseat.com.br/react-do-zero-componentizacao-propriedades-e-estado/](https://blog.rocketseat.com.br/react-do-zero-componentizacao-propriedades-e-estado/)
 
+**Recomendações de vídeos:**
+[Código Fonte TV: React JS // Dicionário do programador](https://www.youtube.com/watch?v=NhUr8cwDiiM)
+[Filipe Dechamps: Novo jeito de aprender React](https://www.youtube.com/watch?v=aJR7f45dBNs)
+
+
 ### 1 - Criando o projeto com Create React App (CRA)
 
 O projeto foi criado utilizando o comando [Create React App](https://github.com/facebook/create-react-app).
@@ -154,3 +159,26 @@ Vamos resolver esse problema posteriormente, mas para entender melhor, deixei al
 **Referências**
 - [StackOverflow: O que é Prop Drilling](https://pt.stackoverflow.com/questions/424755/o-que-%C3%A9-prop-drilling)
 - [KentCDodds: Prop Drilling](https://kentcdodds.com/blog/prop-drilling)
+
+### 7 - Refatorando e corrigindo "Prop Drilling"
+
+Para resolver a questão do Prop Drilling mencionada no passo anterior, poderíamos utilizar uma [Context API](https://pt-br.reactjs.org/docs/context.html) ou até mesmo um estado global gerenciado pelo [Redux](https://redux.js.org/). Dessa forma conseguiríamos acessar e manipular o estado `tasks` sem precisar ficar passando funções como props para os componentes `children`.
+
+Existem também algumas situações onde vamos nos deparar com a necessidade de compartilhar um estado com diversos componentes, às vezes, em componentes que nem possuem relação de `parent` e `children`. Nesses casos, a melhor abordagem seria definir um estado global com [Redux](https://pt-br.reactjs.org/docs/context.html).
+
+Vou deixar algumas referências para entendermos mais sobre o assunto, porém há alguns cenários onde uma simples refatoração já resolve o problema da Prop Drilling, que é o caso do componente `TaskList` e `TaskListItem`.
+
+Notamos que é possível componentizar e dividir a lista de tarefas nesses dois componentes, porém não significa que essa é a melhor abordagem. Por um lado, conseguimos isolar a estrutura e estilização de ambos, porém no passo anterior notamos que esses 2 componentes são muito acoplados, ou seja, dependem um do outro para obter o funcionamento completo. Se analisarmos, provavelmente sempre usaremos os dois componentes juntos, nunca de forma separada. Por esse motivo, foi feita a implementação a seguir:
+
+**Commits:**
+- [Move tag <li> para TaskList e remove TaskListItem](https://github.com/exactaworks/exacta-labs-react-intro/commit/91209bf82f7bda037e0f5a6b7d836fd8bd8ce8e0)
+
+**Implementação:**
+O componente `TaskListItem` foi excluído, e sua estrutura e lógica foram movidas para o componente `TaskList`.
+
+**Referências:**
+- [Redux](https://pt-br.reactjs.org/docs/context.html)
+- [Context API](https://pt-br.reactjs.org/docs/context.html)
+- [Coder: Entenda REDUX em um VÍDEO](https://www.youtube.com/watch?v=J0g1cv_03XQ)
+- [Rocketseat: Desvendando Redux na prática](https://www.youtube.com/watch?v=u99tNt3TZf8&t=645s)
+- [Guilherme Rodz: Como usar React Context](https://www.youtube.com/watch?v=FsCBw9X9U84)
