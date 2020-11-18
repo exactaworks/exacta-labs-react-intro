@@ -1,24 +1,17 @@
 const BASE_URL = 'http://localhost:8000';
 
-export const getTasks = async () => {
-  const response = await fetch(`${BASE_URL}/tasks`);
-  return await response.json();
-};
-
-export const createTask = async (task) => {
-  const response = await fetch(`${BASE_URL}/tasks`, {
-    method: 'POST',
+const fetchRequest = async (method, path, body = null) => {
+  const response = await fetch(`${BASE_URL}/${path}`, {
+    method,
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(task)
+    body: body && JSON.stringify(body),
   });
 
   return await response.json();
 };
 
-export const deleteTask = async (taskId) => {
-  const response = await fetch(`${BASE_URL}/tasks/${taskId}`, {
-    method: 'DELETE'
-  });
+export const getTasks = async () => await fetchRequest('GET', 'tasks');
 
-  return await response.json();
-};
+export const createTask = async (task) => await fetchRequest('POST', 'tasks', task);
+
+export const deleteTask = async (taskId) => await fetchRequest('DELETE', `tasks/${taskId}`);
