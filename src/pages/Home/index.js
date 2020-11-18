@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import { getTasks, createTask, deleteTask } from '../services/api';
+import { getTasks, createTask, deleteTask } from '../../services/api';
 
-import TaskForm from '../components/TaskForm';
-import TaskList from '../components/TaskList';
+import TaskForm from '../../components/TaskForm';
+import TaskList from '../../components/TaskList';
+
+import * as S from './styles';
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -43,15 +45,15 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <h1>To Do List</h1>
+    <S.Container>
+      <S.Title>TASK LIST</S.Title>
       <TaskForm onSubmit={handleTaskSubmit} />
       {
         loading ?
           <p>Carregando...</p> :
           <TaskList tasks={tasks} onRemove={handleTaskRemove} />
       }
-    </>
+    </S.Container>
   );
 };
 
