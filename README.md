@@ -216,10 +216,10 @@ Até agora manipulamos nossas tasks apenas em memória, mas agora que temos noss
 Para lidar com as requisições HTTP utilizando o Fetch, foi criado o arquivo `services/api.js` para deixar o código mais organizado. Foram implementados os métodos `get`, `post` e `delete` e, por fim, o `fetchRequest`, que basicamente abstraí a lógica de montar a request e serve como um middleware, pois é chamado por todos os outros métodos. Posteriormente poderemos utilizá-lo também para tratar respostas de erro.
 
 **Commits:**
--[Implementa request GET](https://github.com/exactaworks/exacta-labs-react-intro/commit/c3855ea5e5f4f3247908dc7cb1386a2ad30d63e1)
--[Implementa request POST](https://github.com/exactaworks/exacta-labs-react-intro/commit/47eaf1b335e08b927a9ac465fae8b23ec4701daf)
--[Implementa request DELETE](https://github.com/exactaworks/exacta-labs-react-intro/commit/0ea53e49942cbf53c299599fa233dad816537b11)
--[Refatora service implementando o middleware fetchRequest](https://github.com/exactaworks/exacta-labs-react-intro/commit/0965730d601dece6728d34b4ac002b5a264ef63d)
+- [Implementa request GET](https://github.com/exactaworks/exacta-labs-react-intro/commit/c3855ea5e5f4f3247908dc7cb1386a2ad30d63e1)
+- [Implementa request POST](https://github.com/exactaworks/exacta-labs-react-intro/commit/47eaf1b335e08b927a9ac465fae8b23ec4701daf)
+- [Implementa request DELETE](https://github.com/exactaworks/exacta-labs-react-intro/commit/0ea53e49942cbf53c299599fa233dad816537b11)
+- [Refatora service implementando o middleware fetchRequest](https://github.com/exactaworks/exacta-labs-react-intro/commit/0965730d601dece6728d34b4ac002b5a264ef63d)
 
 **Referências:**
 - [BrazilJS: Fetch API e o JavaScript](https://braziljs.org/artigos/fetch-api-e-o-javascript/)
