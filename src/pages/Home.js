@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { getTasks } from '../services/api';
+import { getTasks, createTask } from '../services/api';
 
 import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
@@ -16,16 +16,13 @@ const Home = () => {
     setLoading(false);
   };
 
-  useEffect(() => {
-    setLoading(true);
-    handleGetTasks();
-  }, []);
-
-  const handleTaskSubmit = (description) => {
+  const handleTaskSubmit = async (description) => {
     const newTask = {
       id: tasks.length + 1,
       description,
     };
+
+    await createTask(newTask);
 
     const updatedTaskList = [...tasks, newTask];
 
@@ -36,6 +33,11 @@ const Home = () => {
     const updatedTaskList = tasks.filter(item => item.id !== taskId);
     setTasks(updatedTaskList);
   };
+
+  useEffect(() => {
+    setLoading(true);
+    handleGetTasks();
+  }, []);
 
   return (
     <>
