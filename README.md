@@ -171,7 +171,7 @@ Vou deixar algumas referências para entendermos mais sobre o assunto, porém h�
 Notamos que é possível componentizar e dividir a lista de tarefas nesses dois componentes, porém não significa que essa é a melhor abordagem. Por um lado, conseguimos isolar a estrutura e estilização de ambos, porém no passo anterior notamos que esses 2 componentes são muito acoplados, ou seja, dependem um do outro para obter o funcionamento completo. Se analisarmos, provavelmente sempre usaremos os dois componentes juntos, nunca de forma separada. Por esse motivo, foi feita a implementação a seguir:
 
 **Commits:**
-- [Move tag <li> para TaskList e remove TaskListItem](https://github.com/exactaworks/exacta-labs-react-intro/commit/91209bf82f7bda037e0f5a6b7d836fd8bd8ce8e0)
+- [Move tag li para TaskList e remove TaskListItem](https://github.com/exactaworks/exacta-labs-react-intro/commit/91209bf82f7bda037e0f5a6b7d836fd8bd8ce8e0)
 
 **Implementação:**
 O componente `TaskListItem` foi excluído, e sua estrutura e lógica foram movidas para o componente `TaskList`.
