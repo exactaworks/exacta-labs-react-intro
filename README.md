@@ -232,7 +232,7 @@ Há várias formas de estilizar nossa interface no React, podemos passar objetos
 
 Uma outra abordagem, que está se tornando cada vez mais popular, é utilizar CSS-in-JS, que como o nome já diz, é basicamente a utilização do JavaScript em conjunto com o CSS.
 
-Para aplicar o CSS-in-JS iremos utilizar a biblioteca (styled-components)[https://styled-components.com/]. Com ela, teremos bastante flexibilidade na manipulação dos estilos, e também conseguiremos deixar nossa estrutura bem semântica.
+Para aplicar o CSS-in-JS iremos utilizar a biblioteca [styled-components](https://styled-components.com/). Com ela, teremos bastante flexibilidade na manipulação dos estilos, e também conseguiremos deixar nossa estrutura bem semântica.
 
 **Implementação:**
 
