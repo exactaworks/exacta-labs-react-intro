@@ -253,3 +253,4 @@ Feito isso, os estilos foram implementandos e utilizados em seus respectivos `in
 - [W3schools: React CSS](https://www.w3schools.com/react/react_css.asp)
 - [Felipe Fialho: Do BEM ao CSS-in-JS](https://www.felipefialho.com/blog/do-sass-e-bem-ao-css-in-js-a-evolucao-do-css-ao-longo-da-historia/)
 - [Styled Components](https://styled-components.com/)
+- [Styled Icons](https://styled-icons.js.org/)
