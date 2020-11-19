@@ -18,8 +18,8 @@ O React é uma biblioteca para criação de interface e representa a camada de �
 **Referência:** [https://blog.rocketseat.com.br/react-do-zero-componentizacao-propriedades-e-estado/](https://blog.rocketseat.com.br/react-do-zero-componentizacao-propriedades-e-estado/)
 
 **Recomendações de vídeos:**
-[Código Fonte TV: React JS // Dicionário do programador](https://www.youtube.com/watch?v=NhUr8cwDiiM)
-[Filipe Dechamps: Novo jeito de aprender React](https://www.youtube.com/watch?v=aJR7f45dBNs)
+- [Código Fonte TV: React JS // Dicionário do programador](https://www.youtube.com/watch?v=NhUr8cwDiiM)
+- [Filipe Dechamps: Novo jeito de aprender React](https://www.youtube.com/watch?v=aJR7f45dBNs)
 
 
 ### 1 - Criando o projeto com Create React App (CRA)
@@ -60,14 +60,14 @@ Os componentes basicamente são pequenos pedaços da interface. A ideia é separ
 
 Em questão de código, os componentes são basicamente funções javascript que aceitam parâmetros e retornam elementos React.
 
-**Commits:**
-- [Componentizando To Do List atual](https://github.com/exactaworks/exacta-labs-react-intro/commit/bca01924782c9f594b7c112f5bc391303b52e54a?branch=bca01924782c9f594b7c112f5bc391303b52e54a&diff=unified)
-
 **Implementação:**
 Antes toda nossa lógica e estrutura estava concentrada no `App.js`, agora o código foi refatorado e temos a página `Home.js`, que está componentizada, sendo formada pelos componentes:
 - TaskForm: responsável por renderizar o input e o button.
 - TaskList: responsável por renderizar a lista de tarefas, que utiliza em sua composição o próximo componente da lista.
   - TaskListItem: responsável por renderizar cada tarefa individualmente.
+
+**Commits:**
+- [Componentizando To Do List atual](https://github.com/exactaworks/exacta-labs-react-intro/commit/bca01924782c9f594b7c112f5bc391303b52e54a?branch=bca01924782c9f594b7c112f5bc391303b52e54a&diff=unified)
 
 ### 4 - Criando um estado (state) com useState
 
@@ -227,3 +227,29 @@ Para lidar com as requisições HTTP utilizando o Fetch, foi criado o arquivo `s
 - [HTTP POST Request Examples](https://jasonwatmore.com/post/2020/02/01/react-fetch-http-post-request-examples)
 
 ### 10 - Estilizando a To Do List com Styled Components
+
+Há várias formas de estilizar nossa interface no React, podemos passar objetos contendo as propriedades de estilização ou até mesmo definir classes em um arquivo separado (esse [artigo](https://www.w3schools.com/react/react_css.asp) tem alguns exemplos).
+
+Uma outra abordagem, que está se tornando cada vez mais popular, é utilizar CSS-in-JS, que como o nome já diz, é basicamente a utilização do JavaScript em conjunto com o CSS.
+
+Para aplicar o CSS-in-JS iremos utilizar a biblioteca (styled-components)[https://styled-components.com/]. Com ela, teremos bastante flexibilidade na manipulação dos estilos, e também conseguiremos deixar nossa estrutura bem semântica.
+
+**Implementação:**
+
+Primeiro o `styled-components` foi instalado executando o comando `yarn add styled-components`.
+Também adicionamos o módulo de ícones `material` da biblioteca [styled-icons](https://styled-icons.js.org/) executando o comando `yarn add @styled-icons/material`.
+
+Após isso, colocamos nossa `Home.js` dentro do namespace `Home` e alteramos o nome do arquivo para `index.js` (mantendo o padrão dos componentes). Então, criamos um arquivo `styles.js` para cada componente (incluindo a Home), onde vamos manter nossos componentes estilizados.
+
+Feito isso, os estilos foram implementandos e utilizados em seus respectivos `index.js`.
+
+**Commits:**
+- [Instala styled-components](https://github.com/exactaworks/exacta-labs-react-intro/commit/d9da6312b01a1f00f753be5200a577b6de1e9a05)
+- [Implementa estilização da página Home](https://github.com/exactaworks/exacta-labs-react-intro/commit/2565680a096c3446f6fa9a3085809a2a19ef88e9)
+- [Implementa estilização do componente TaskForm](https://github.com/exactaworks/exacta-labs-react-intro/commit/653729d5c63872022a2e6cbc59c40331b053b402)
+- [Implementa estilização do componente TaskList e adiciona @styled-icons/material](https://github.com/exactaworks/exacta-labs-react-intro/commit/9ad06a6225d43ccfc190650a15200f9036e87883)
+
+**Referências:**
+- [W3schools: React CSS](https://www.w3schools.com/react/react_css.asp)
+- [Felipe Fialho: Do BEM ao CSS-in-JS](https://www.felipefialho.com/blog/do-sass-e-bem-ao-css-in-js-a-evolucao-do-css-ao-longo-da-historia/)
+- [Styled Components](https://styled-components.com/)
