@@ -20,7 +20,7 @@ const Home = () => {
 
   const handleTaskSubmit = async (description) => {
     const newTask = {
-      id: tasks.length + 1,
+      id: `task-id-${(new Date()).getTime()}`,
       description,
     };
 
