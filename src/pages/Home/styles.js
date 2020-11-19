@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   * {
-    margin: 0;
-    padding: 0;
     outline: 0;
     box-sizing: border-box;
   }
@@ -12,6 +10,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 125px;
 `;
 
 export const Title = styled.h1`
