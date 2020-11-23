@@ -11,11 +11,17 @@ const TaskForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(taskDescription);
+    setTaskDescription('');
   };
 
   return (
     <S.Form onSubmit={handleSubmit}>
-      <Input placeholder="DESCRIÇÃO" onChange={e => setTaskDescription(e.target.value)} />
+      <Input
+        placeholder="DESCRIÇÃO"
+        value={taskDescription}
+        onChange={e => setTaskDescription(e.target.value)}
+        onClear={() => setTaskDescription('')}
+      />
       <Button type="submit">ADICIONAR TASK</Button>
     </S.Form>
   );
