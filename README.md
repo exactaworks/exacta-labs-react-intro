@@ -257,7 +257,9 @@ Feito isso, os estilos foram implementandos e utilizados em seus respectivos `in
 
 ### 11 - Criando componentes Input e Button
 
-Temos implementado os componentes Input e Button dentro do nosso TaskForm, mas é legal observar que ambos os componentes são independentes do TaskForm. Até agora não possuímos nenhuma lógica complexa nesses dois componentes, mas já podemos remove-los do TaskForm e criar componentes separados, pois dessa forma vamos isolar e abstrair as responsabilidades de ambos, o que vai facilitar na implementação de novos comportamentos e também na reutilização deles.
+Temos implementado os componentes Input e Button dentro do nosso TaskForm, mas é legal observar que ambos os componentes são independentes do TaskForm. 
+
+Até agora não possuímos nenhuma lógica complexa nesses dois componentes, mas já podemos removê-los do TaskForm e criar componentes separados, pois dessa forma vamos isolar e abstrair as responsabilidades de ambos, o que vai facilitar na implementação de novos comportamentos e também na reutilização deles.
 
 **Implementação:**
 
