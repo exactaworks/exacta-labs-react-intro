@@ -11,4 +11,13 @@ export const Button = styled.button`
   color: #fff;
   background: #118AB2;
   box-shadow: 2px 2px 4px 0.25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6
+  }
 `;
