@@ -254,3 +254,15 @@ Feito isso, os estilos foram implementandos e utilizados em seus respectivos `in
 - [Felipe Fialho: Do BEM ao CSS-in-JS](https://www.felipefialho.com/blog/do-sass-e-bem-ao-css-in-js-a-evolucao-do-css-ao-longo-da-historia/)
 - [Styled Components](https://styled-components.com/)
 - [Styled Icons](https://styled-icons.js.org/)
+
+11 - Criando componentes Input e Button
+
+Temos implementado os componentes Input e Button dentro do nosso TaskForm, mas é legal observar que ambos os componentes são independentes do TaskForm. Até agora não possuímos nenhuma lógica complexa nesses dois componentes, mas já podemos remove-los do TaskForm e criar componentes separados, pois dessa forma vamos isolar e abstrair as responsabilidades de ambos, o que vai facilitar na implementação de novos comportamentos e também na reutilização deles.
+
+**Implementação:**
+
+Foram criados os componentes Input e Button, com seus respectivos `index.js` e `styles.js`. Após isso, substituímos o código referente ao Input e ao Button do TaskForm e passamos a utilizar os componentes criados.
+
+**Commits:**
+- [Cria componente Input](https://github.com/exactaworks/exacta-labs-react-intro/commit/e7b13620f351a59f79bc6ea4801332416943ebee)
+- [Cria componente Button](https://github.com/exactaworks/exacta-labs-react-intro/commit/4637a15af2c83c0740be7a816cad7dbf02e2874e)
