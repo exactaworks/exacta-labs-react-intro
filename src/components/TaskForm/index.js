@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Input from '../Input';
+import Button from '../Button';
 
 import * as S from './styles';
 
@@ -15,7 +16,7 @@ const TaskForm = ({ onSubmit }) => {
   return (
     <S.Form onSubmit={handleSubmit}>
       <Input placeholder="DESCRIÇÃO" onChange={e => setTaskDescription(e.target.value)} />
-      <S.Button type="submit">ADICIONAR TASK</S.Button>
+      <Button type="submit">ADICIONAR TASK</Button>
     </S.Form>
   );
 };
