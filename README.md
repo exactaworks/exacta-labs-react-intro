@@ -268,3 +268,15 @@ Foram criados os componentes Input e Button, com seus respectivos `index.js` e `
 **Commits:**
 - [Cria componente Input](https://github.com/exactaworks/exacta-labs-react-intro/commit/e7b13620f351a59f79bc6ea4801332416943ebee)
 - [Cria componente Button](https://github.com/exactaworks/exacta-labs-react-intro/commit/4637a15af2c83c0740be7a816cad7dbf02e2874e)
+
+### 12 - Adicionando comportamentos no Input e Button
+
+Agora vamos adicionar alguns comportamentos e funcionalidades nos nossos componentes Input e Button.
+
+**Implementação:**
+- Button: foram adicionados os comportamentos visuais referentes ao `hover` e ao `active`, também colocamos um `cursor: pointer`.
+- Input: adicionamos a funcionalidades de resetar o input ao clicar no ícone `X` e também ao cadastrar uma nova task. Para isso, foi necessário adicionar o ícone `X` e também transformar o input em um input controlado, adicionando a propriedade `value={state}`. Dessa forma, além do estado reagir as mudanças do nosso input, nosso input também passa a reagir as mudanças do estado.
+
+**Commits:**
+- [Adiciona comportamento hover e active no Button](https://github.com/exactaworks/exacta-labs-react-intro/commit/ef8d97da6b53141dc02cb22421ee9c9d710a8519)
+- [Implementa reset de Input](https://github.com/exactaworks/exacta-labs-react-intro/commit/6ae0ad073be472f4a4dd342e13e6b4a20efa08d7)
