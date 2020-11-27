@@ -1,6 +1,6 @@
 # Exacta Labs - React Intro
 
-Esse projeto tem como objetivo introduzir conceitos e práticas da biblioteca React.
+Esse projeto tem como objetivo introduzir conceitos e práticas do desenvolvimento com a biblioteca React.
 
 ## Executando o projeto
 
