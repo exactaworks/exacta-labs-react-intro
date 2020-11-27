@@ -10,19 +10,19 @@ Esse projeto tem como objetivo introduzir conceitos e práticas do desenvolvimen
 - Abra [http://localhost:3000](http://localhost:3000) para ver o projeto executando.
 
 ## Conteúdo
-0. [00 - Introdução](#introdução)
-1. [01 - Criando o projeto com CRA](#1---criando-o-projeto-com-create-react-app-cra)
-2. [02 - Criando a estrutura base da To Do List com JSX](#2---criando-a-estrutura-base-da-to-do-list-com-jsx)
-3. [03 - Componentização](#3---componentização)
-4. [04 - Criando um estado com useState](#4---criando-um-estado-state-com-usestate)
-5. [05 - Implementando ciclo de vida com useEffect](#5---implementando-ciclo-de-vida-com-useeffect)
-6. [06 - Atualizando e removendo tasks através de parâmetros](#6---atualizando-e-removendo-tasks-através-de-parâmetros)
-7. [07 - Refatorando e corrigindo "Prop Drilling"](#7---refatorando-e-corrigindo-prop-drilling)
-8. [08 - Instalando e configurando JSON Server](#8---instalando-e-configurando-json-server)
-9. [09 - Consumindo API Fake com Fetch](#9---consumindo-api-fake-com-fetch)
-10. [10 - Estilizando a To Do List com Styled Components](#10---estilizando-a-to-do-list-com-styled-components)
-11. [11 - Criando componentes Input e Button](#11---criando-componentes-input-e-button)
-12. [12 - Adicionando comportamentos no Input e Button](#12---adicionando-comportamentos-no-input-e-button)
+0. [Introdução](#introdução)
+1. [Criando o projeto com CRA](#1---criando-o-projeto-com-create-react-app-cra)
+2. [Criando a estrutura base da To Do List com JSX](#2---criando-a-estrutura-base-da-to-do-list-com-jsx)
+3. [Componentização](#3---componentização)
+4. [Criando um estado com useState](#4---criando-um-estado-state-com-usestate)
+5. [Implementando ciclo de vida com useEffect](#5---implementando-ciclo-de-vida-com-useeffect)
+6. [Atualizando e removendo tasks através de parâmetros](#6---atualizando-e-removendo-tasks-através-de-parâmetros)
+7. [Refatorando e corrigindo "Prop Drilling"](#7---refatorando-e-corrigindo-prop-drilling)
+8. [Instalando e configurando JSON Server](#8---instalando-e-configurando-json-server)
+9. [Consumindo API Fake com Fetch](#9---consumindo-api-fake-com-fetch)
+10. [Estilizando a To Do List com Styled Components](#10---estilizando-a-to-do-list-com-styled-components)
+11. [Criando componentes Input e Button](#11---criando-componentes-input-e-button)
+12. [Adicionando comportamentos no Input e Button](#12---adicionando-comportamentos-no-input-e-button)
 
 ### Introdução
 
