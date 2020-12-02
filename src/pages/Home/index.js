@@ -5,6 +5,8 @@ import { getTasks, createTasks, deleteTask } from '../../services/api';
 import TaskForm from '../../components/TaskForm';
 import TaskList from '../../components/TaskList';
 
+import * as S from './styles';
+
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [tasks, setTasks] = useState([]);
@@ -43,15 +45,15 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <h1>Task List</h1>
+    <S.Container>
+      <S.Title>Task List</S.Title>
       <TaskForm onSubmit={handleTaskSubmit} />
       {
         loading ?
           <p>Carregando...</p> :
           <TaskList tasks={tasks} onRemove={handleRemoveTask} />
       }
-    </>
+    </S.Container>
   );
 };
 
