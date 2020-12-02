@@ -11,7 +11,7 @@ const Home = () => {
 
   const handleGetTasks = async () => {
     const response = await getTasks();
-    
+
     setTasks(response);
     setLoading(false);
   };
@@ -32,8 +32,9 @@ const Home = () => {
   const handleRemoveTask = async (taskId) => {
     await deleteTask(taskId);
 
-    // const updatedTaskList = tasks.filter(item => item.id !== taskId);
-    // setTasks(updatedTaskList);
+    const updatedTaskList = tasks.filter(item => item.id !== taskId);
+
+    setTasks(updatedTaskList);
   };
 
   useEffect(() => {
