@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { ArrowBack, ArrowForward } from '@styled-icons/material';
+
 import { getTasks, createTask, deleteTask } from '../../services/api';
 
 import TaskForm from '../../components/TaskForm';
@@ -9,14 +11,22 @@ import * as S from './styles';
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const [tasks, setTasks] = useState([]);
 
-  const handleGetTasks = async () => {
-    const tasks = await getTasks();
+  const handleGetTasks = async (page = 1, limit = 5) => {
+    const tasks = await getTasks(page, limit);
 
+    setCurrentPage(page);
     setTasks(tasks);
     setLoading(false);
   };
+
+  const handleNextPage = () => handleGetTasks(currentPage + 1);
+
+  const handlePreviousPage = () => currentPage > 1 ?
+    handleGetTasks(currentPage - 1) :
+    handleGetTasks(currentPage);
 
   const handleTaskSubmit = async (description) => {
     const newTask = {
@@ -53,6 +63,11 @@ const Home = () => {
           <p>Carregando...</p> :
           <TaskList tasks={tasks} onRemove={handleTaskRemove} />
       }
+      <S.Pagination>
+        <ArrowBack onClick={handlePreviousPage} />
+        <p>Página {currentPage}</p>
+        <ArrowForward onClick={handleNextPage} />
+      </S.Pagination>
     </S.Container>
   );
 };
