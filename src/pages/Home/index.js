@@ -22,7 +22,9 @@ const Home = () => {
     setLoading(false);
   };
 
-  const handleNextPage = () => handleGetTasks(currentPage + 1);
+  const handleNextPage = () => tasks.length === 5 ?
+    handleGetTasks(currentPage + 1) :
+    handleGetTasks(currentPage);
 
   const handlePreviousPage = () => currentPage > 1 ?
     handleGetTasks(currentPage - 1) :
@@ -36,17 +38,13 @@ const Home = () => {
 
     await createTask(newTask);
 
-    const updatedTaskList = [...tasks, newTask];
-
-    setTasks(updatedTaskList);
+    handleGetTasks(currentPage);
   }
 
   const handleTaskRemove = async (taskId) => {
-    const updatedTaskList = tasks.filter(item => item.id !== taskId);
-
     await deleteTask(taskId);
 
-    setTasks(updatedTaskList);
+    handleGetTasks(currentPage);
   };
 
   useEffect(() => {
