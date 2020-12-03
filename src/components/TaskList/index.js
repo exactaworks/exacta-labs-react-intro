@@ -1,18 +1,17 @@
 import React from 'react';
 
+import * as S from './styles'
 
 const TaskList = ({ tasks, onRemove }) => {
   return (
-    <ul>
-      {
-        tasks.map(item =>
-          <li>
-            <span>{item.description}</span>
-            <span onClick={() => onRemove(item.id)}> X </span>
-          </li>
-        )
-      }
-    </ul>
+    <S.List>
+      {tasks.map(item =>
+        <S.ListItem key={item.id}>
+          <span>{item.description}</span>
+          <S.DeleteIcon onClick={() => onRemove(item.id)} />
+        </S.ListItem>
+      )}
+    </S.List>
   );
 };
 

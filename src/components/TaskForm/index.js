@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import * as S from './styles';
+
 const TaskForm = ({ onSubmit }) => {
   const [taskDescription, setTaskDescription] = useState('');
 
@@ -11,14 +13,10 @@ const TaskForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        placeholder="DESCRIÇÃO"
-        value={taskDescription}
-        onChange={(e) => setTaskDescription(e.target.value)}
-      />
-      <button type="submit">Adicionar</button>
-    </form>
+    <S.Form onSubmit={handleSubmit}>
+      <S.Input placeholder="DESCRIÇÃO" onChange={e => setTaskDescription(e.target.value)} />
+      <S.Button type="submit">ADICIONAR TASK</S.Button>
+    </S.Form>
   );
 };
 
