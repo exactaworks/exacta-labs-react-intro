@@ -10,8 +10,14 @@ const fetchRequest = async (method, path, body = null) => {
   return await response.json();
 };
 
-export const getTasks = async (page = 1, limit = 5) =>
-  await fetchRequest('GET', `tasks?_page=${page}&_limit=${limit}`);
+export const getTasks = async (page = 1, limit = 5) => {
+  const queryParams = new URLSearchParams({
+    _page: page,
+    _limit: limit,
+  });
+
+  return await fetchRequest('GET', `tasks?${queryParams}`);
+}
 
 export const createTask = async (task) =>
   await fetchRequest('POST', 'tasks', task);
