@@ -3,7 +3,6 @@ import { Delete } from '@styled-icons/material';
 
 export const List = styled.ul`
   width: 100%;
-  max-width: 600px;
   display: flex;
   flex-direction: column;
   list-style-type: none;
