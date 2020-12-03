@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8000';
+import { BASE_URL, DEFAULT_PAGE_LIMIT } from '../utils/constants';
 
 const fetchRequest = async (method, path, body = null) => {
   const response = await fetch(`${BASE_URL}/${path}`, {
@@ -10,7 +10,7 @@ const fetchRequest = async (method, path, body = null) => {
   return await response.json();
 };
 
-export const getTasks = async (page = 1, limit = 5) => {
+export const getTasks = async (page = 1, limit = DEFAULT_PAGE_LIMIT) => {
   const queryParams = new URLSearchParams({
     _page: page,
     _limit: limit,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { ArrowBack, ArrowForward } from '@styled-icons/material';
 
+import { DEFAULT_PAGE_LIMIT } from '../../utils/constants';
 import { getTasks, createTask, deleteTask } from '../../services/api';
 
 import TaskForm from '../../components/TaskForm';
@@ -14,7 +15,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [tasks, setTasks] = useState([]);
 
-  const handleGetTasks = async (page = 1, limit = 5) => {
+  const handleGetTasks = async (page = 1, limit = DEFAULT_PAGE_LIMIT) => {
     const tasks = await getTasks(page, limit);
 
     setCurrentPage(page);
@@ -22,7 +23,7 @@ const Home = () => {
     setLoading(false);
   };
 
-  const handleNextPage = () => tasks.length === 5 ?
+  const handleNextPage = () => tasks.length === DEFAULT_PAGE_LIMIT ?
     handleGetTasks(currentPage + 1) :
     handleGetTasks(currentPage);
 
