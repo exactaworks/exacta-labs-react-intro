@@ -23,7 +23,7 @@ Esse projeto tem como objetivo introduzir conceitos e práticas do desenvolvimen
 10. [Estilizando a To Do List com Styled Components](#10---estilizando-a-to-do-list-com-styled-components)
 11. [Criando componentes Input e Button](#11---criando-componentes-input-e-button)
 12. [Adicionando comportamentos no Input e Button](#12---adicionando-comportamentos-no-input-e-button)
-13. [Implementa paginação na consulta de Tasks](#13---implementa-paginação-na-consulta-de-tasks)
+13. [Implementando paginação na consulta de Tasks](#13---implementa-paginação-na-consulta-de-tasks)
 
 ### Introdução
 
@@ -295,7 +295,7 @@ Agora vamos adicionar alguns comportamentos e funcionalidades nos nossos compone
 - [Adiciona comportamento hover e active no Button](https://github.com/exactaworks/exacta-labs-react-intro/commit/ef8d97da6b53141dc02cb22421ee9c9d710a8519)
 - [Implementa reset de Input](https://github.com/exactaworks/exacta-labs-react-intro/commit/6ae0ad073be472f4a4dd342e13e6b4a20efa08d7)
 
-### 13 - Implementa paginação na consulta de Tasks
+### 13 - Implementando paginação na consulta de Tasks
 
 Nosso método `getTasks` que faz a requisição buscando as tasks cadastradas, no momento retorna todos os registros. Em uma função GET podemos passar parâmetros de consulta, conhecidos como `query params`, que servem para filtrar nossa consulta ou até mesmo paginá-la.
 
