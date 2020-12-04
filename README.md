@@ -315,7 +315,7 @@ Lembrando que o `backend` precisa estar preparado para receber esses parâmetros
 
 **Implementação:**
 
-Primeiro, adicionamos os query params no nosso método `getTasks`, inicialmente colocando diretamente na URL. Após isso, foi implementando a interface de paginação no nosso front-end, também refatoramos nossos métodos de cadastro e exclusão de tasks para sempre manter nosso estado `tasks` atualizado após realizar cada operação.
+Primeiro, adicionamos os query params no nosso método `getTasks`, inicialmente colocando diretamente na URL. Após isso, foi implemetando a interface de paginação no nosso front-end, também refatoramos nossos métodos de cadastro e exclusão de tasks para sempre manter nosso estado `tasks` atualizado após realizar cada operação.
 
 Com a nossa paginação já funcionando, refatoramos a maneira como montamos os query params, dessa vez utilizando um objeto `URLSearchParams`. Também foi criado um arquivo para armazenarmos nossas constantes.
 
