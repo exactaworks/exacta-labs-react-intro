@@ -23,6 +23,7 @@ Esse projeto tem como objetivo introduzir conceitos e práticas do desenvolvimen
 10. [Estilizando a To Do List com Styled Components](#10---estilizando-a-to-do-list-com-styled-components)
 11. [Criando componentes Input e Button](#11---criando-componentes-input-e-button)
 12. [Adicionando comportamentos no Input e Button](#12---adicionando-comportamentos-no-input-e-button)
+13. [Implementa paginação na consulta de Tasks](#13---implementa-paginação-na-consulta-de-tasks)
 
 ### Introdução
 
@@ -302,10 +303,10 @@ Para enviar `query params` basta adicionar `?` no fim da URL da requisição, e 
 
 ```javascript
   // Request com 1 query param:
-  http://localhost:8000/tasks?description=teste
+  'http://localhost:8000/tasks?description=teste'
 
   // Request com 2 query params:
-  http://localhost:8000/tasks?_page=1&_limit=2
+  'http://localhost:8000/tasks?_page=1&_limit=2'
 ```
 
 Utilizando o `fetch` ou até mesmo o `axios` conseguimos criar `query params` de uma maneira mais eficiente também. No nosso caso, vamos usar o `fetch` por ser uma função nativa.
