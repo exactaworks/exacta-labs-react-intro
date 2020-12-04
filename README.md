@@ -23,7 +23,7 @@ Esse projeto tem como objetivo introduzir conceitos e práticas do desenvolvimen
 10. [Estilizando a To Do List com Styled Components](#10---estilizando-a-to-do-list-com-styled-components)
 11. [Criando componentes Input e Button](#11---criando-componentes-input-e-button)
 12. [Adicionando comportamentos no Input e Button](#12---adicionando-comportamentos-no-input-e-button)
-13. [Implementando paginação na consulta de Tasks](#13---implementa-paginação-na-consulta-de-tasks)
+13. [Implementando paginação na consulta de Tasks](#13---implementando-paginação-na-consulta-de-tasks)
 
 ### Introdução
 
