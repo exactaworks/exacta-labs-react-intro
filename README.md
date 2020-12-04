@@ -293,3 +293,42 @@ Agora vamos adicionar alguns comportamentos e funcionalidades nos nossos compone
 **Commits:**
 - [Adiciona comportamento hover e active no Button](https://github.com/exactaworks/exacta-labs-react-intro/commit/ef8d97da6b53141dc02cb22421ee9c9d710a8519)
 - [Implementa reset de Input](https://github.com/exactaworks/exacta-labs-react-intro/commit/6ae0ad073be472f4a4dd342e13e6b4a20efa08d7)
+
+### 13 - Implementa paginação na consulta de Tasks
+
+Nosso método `getTasks` que faz a requisição buscando as tasks cadastradas, no momento retorna todos os registros. Em uma função GET podemos passar parâmetros de consulta, conhecidos como `query params`, que servem para filtrar nossa consulta ou até mesmo paginá-la.
+
+Para enviar `query params` basta adicionar `?` no fim da URL da requisição, e em seguida os parâmetros no formato `param=value`. Podemos também enviar vários parâmetros, separando com o carácter `&`. Exemplo de URLs com `query params`:
+
+```javascript
+  // Request com 1 query param:
+  http://localhost:8000/tasks?description=teste
+
+  // Request com 2 query params:
+  http://localhost:8000/tasks?_page=1&_limit=2
+```
+
+Utilizando o `fetch` ou até mesmo o `axios` conseguimos criar `query params` de uma maneira mais eficiente também. No nosso caso, vamos usar o `fetch` por ser uma função nativa.
+
+Lembrando que o `backend` precisa estar preparado para receber esses parâmetros e realizar o filtro da consulta ou a paginação. Sabendo disso, vamos agora implementar a paginação da nossa consulta de tasks.
+
+**Implementação:**
+
+Primeiro, adicionamos os query params no nosso método `getTasks`, inicialmente colocando diretamente na URL. Após isso, foi implementando a interface de paginação no nosso front-end, também refatoramos nossos métodos de cadastro e exclusão de tasks para sempre manter nosso estado `tasks` atualizado após realizar cada operação.
+
+Com a nossa paginação já funcionando, refatoramos a maneira como montamos os query params, dessa vez utilizando um objeto `URLSearchParams`. Também foi criado um arquivo para armazenarmos nossas constantes.
+
+**Commits:**
+- [Adiciona query params no método getTasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/3618ea43705ce47794a64c5ba81237475b465bee)
+- [Implementa interface de paginação](https://github.com/exactaworks/exacta-labs-react-intro/commit/80d3da487225649bf68274f6c2e8386c6cf0bfde)
+- [Ajusta método de consulta de tasks](https://github.com/exactaworks/exacta-labs-react-intro/commit/7b70fabfb880c6f873292a14943a90bdc3ea05d7)
+- [Ajusta estilo do form](https://github.com/exactaworks/exacta-labs-react-intro/commit/cbb58a741339477330535bdac8f55e07b75b186d)
+- [Refatora query params](https://github.com/exactaworks/exacta-labs-react-intro/commit/135f2ab8f0db0167092625df1b19e00e014e55ba)
+- [Cria arquivo de constantes](https://github.com/exactaworks/exacta-labs-react-intro/commit/8b8af1958d3e73e643751d91e9edd38a2b5b8ec6)
+
+**Referências:**
+[Artigo - Rocketseat: Tipos de Parâmetros nas requisições REST](https://blog.rocketseat.com.br/tipos-de-parametros-nas-requisicoes-rest/)
+[Post - Rocketseat: Recuperando e criando Query Strings](https://www.facebook.com/rocketseat/photos/muitas-vezes-precisamos-lidar-com-query-string-par%C3%A2metros-get-em-aplica%C3%A7%C3%B5es-java/329786660901148/)
+[Vídeo - Rocketseat: Quando utilizar Query Params](https://www.facebook.com/rocketseat/videos/218282579377031)
+[Artigo - Rocketseat: Axios](https://blog.rocketseat.com.br/axios-um-cliente-http-full-stack/)
+[MDN - URLSearchParams](https://developer.mozilla.org/pt-BR/docs/Web/API/URLSearchParams)
