@@ -327,8 +327,8 @@ Com a nossa paginação já funcionando, refatoramos a maneira como montamos os 
 - [Cria arquivo de constantes](https://github.com/exactaworks/exacta-labs-react-intro/commit/8b8af1958d3e73e643751d91e9edd38a2b5b8ec6)
 
 **Referências:**
-[Artigo - Rocketseat: Tipos de Parâmetros nas requisições REST](https://blog.rocketseat.com.br/tipos-de-parametros-nas-requisicoes-rest/)
-[Post - Rocketseat: Recuperando e criando Query Strings](https://www.facebook.com/rocketseat/photos/muitas-vezes-precisamos-lidar-com-query-string-par%C3%A2metros-get-em-aplica%C3%A7%C3%B5es-java/329786660901148/)
-[Vídeo - Rocketseat: Quando utilizar Query Params](https://www.facebook.com/rocketseat/videos/218282579377031)
-[Artigo - Rocketseat: Axios](https://blog.rocketseat.com.br/axios-um-cliente-http-full-stack/)
-[MDN - URLSearchParams](https://developer.mozilla.org/pt-BR/docs/Web/API/URLSearchParams)
+- [Artigo - Rocketseat: Tipos de Parâmetros nas requisições REST](https://blog.rocketseat.com.br/tipos-de-parametros-nas-requisicoes-rest/)
+- [Post - Rocketseat: Recuperando e criando Query Strings](https://www.facebook.com/rocketseat/photos/muitas-vezes-precisamos-lidar-com-query-string-par%C3%A2metros-get-em-aplica%C3%A7%C3%B5es-java/329786660901148/)
+- [Vídeo - Rocketseat: Quando utilizar Query Params](https://www.facebook.com/rocketseat/videos/218282579377031)
+- [Artigo - Rocketseat: Axios](https://blog.rocketseat.com.br/axios-um-cliente-http-full-stack/)
+- [MDN - URLSearchParams](https://developer.mozilla.org/pt-BR/docs/Web/API/URLSearchParams)
